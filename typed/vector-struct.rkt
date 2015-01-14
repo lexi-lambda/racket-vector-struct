@@ -10,11 +10,6 @@
   (syntax-parse stx #:literals (:)
     [(_ id:id ([field:id : type:expr] ...)
         (~optional (~and #:mutable mutable-kw)))
-     ; submodule names
-     (define/with-syntax untyped-submod-name
-       (datum->syntax #'id (gensym 'vecstruct-submodule-untyped.)))
-     (define/with-syntax typed-submod-name
-       (datum->syntax #'id (gensym 'vecstruct-submodule-typed.)))
      ; name of the vecstruct predicate function
      (define/with-syntax predicate?
        (format-id #'id "~a?" #'id))
