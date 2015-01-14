@@ -13,7 +13,8 @@ examples and additional information.
 
 @section{API}
 
-@defform[(vecstruct id ([field-id : field-type] ...) struct-option ...)
+@defform[#:literals (:)
+         (vecstruct id ([field-id : field-type] ...) struct-option ...)
          #:grammar
          [(struct-option #:mutable)]]{
 

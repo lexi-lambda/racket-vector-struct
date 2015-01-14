@@ -10,4 +10,5 @@
   '("base"
     "typed-racket-lib"))
 (define build-deps
-  '())
+  '("racket-doc"
+    "scribble-lib"))
