@@ -2,7 +2,7 @@
 compiled/
 
 # Scribble documentation files
-semver/doc/
+doc/
 
 # cover-generated code coverage reports
 coverage/

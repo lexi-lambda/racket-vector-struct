@@ -4,6 +4,8 @@
                      racket/syntax
                      syntax/parse))
 
+(provide vecstruct)
+
 (define-syntax (vecstruct stx)
   (syntax-parse stx #:literals (:)
     [(_ id:id ([field:id : type:expr] ...)

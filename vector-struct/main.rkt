@@ -4,6 +4,8 @@
                      racket/syntax
                      syntax/parse))
 
+(provide vecstruct)
+
 (define-syntax (vecstruct stx)
   (syntax-parse stx
     [(_ id:id (field:id ...)
@@ -44,10 +46,12 @@
                 (= vec-size (vector-length vec))
                 (equal? 'id (vector-ref vec 0))))
          ; define getters
-         (define (getter vec)
+         (define/contract (getter vec)
+           (predicate? . -> . any)
            (vector-ref vec getter-index))
          ...
          ; define setters (if mutable)
-         (define (setter vec value)
+         (define/contract (setter vec value)
+           (predicate? any/c . -> . any)
            (vector-set! vec setter-index value))
          ...)]))
