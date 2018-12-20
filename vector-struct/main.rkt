@@ -1,6 +1,8 @@
 #lang racket/base
 
-(require (for-syntax racket/base
+(require racket/contract/base
+         racket/contract/region
+         (for-syntax racket/base
                      racket/syntax
                      syntax/parse))
 
